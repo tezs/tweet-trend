@@ -18,7 +18,6 @@ environment {
 
             }
         }
-    stages {
         stage('test') {
             steps {
                 echo " -------test started -----"
