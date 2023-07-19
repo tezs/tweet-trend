@@ -13,10 +13,21 @@ environment {
     stages {
         stage('build') {
             steps {
+                echo "-------buid started-------"
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
 
             }
         }
+    stages {
+        stage('test') {
+            steps {
+                echo " -------test started -----"
+                sh 'mvn surefire-report:report'
+                echo "------test completed------"
+
+            }
+        }    
+    }    
     stage('SonarQube analysis') {
     environment {
       scannerHome = tool 'Tejas_sonar_scanner'
