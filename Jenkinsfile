@@ -26,7 +26,6 @@ environment {
 
             }
         }    
-    }    
     stage('SonarQube analysis') {
     environment {
       scannerHome = tool 'Tejas_sonar_scanner'
@@ -38,3 +37,4 @@ environment {
     }
   } 
  }
+}
