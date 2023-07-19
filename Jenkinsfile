@@ -17,15 +17,15 @@ environment {
 
             }
         }
-    }
     stage('SonarQube analysis') {
     environment {
-        scannerHome = tool 'Tejas_sonar_scanner';
+      scannerHome = tool 'Tejas_sonar_scanner'
     }
-    steps{ 
+    steps{
     withSonarQubeEnv('Tejas_sonar_qube') { // If you have configured more than one global server connection, you can specify its name
-        sh "${scannerHome}/bin/sonar-scanner"
+      sh "${scannerHome}/bin/sonar-scanner"
     }
-        }    
-}
+    }
+  } 
+ }
 }
